@@ -7,8 +7,8 @@
 <title>کوولت</title>
 
 <!-- Google fonts -->
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:600' rel='stylesheet' type='text/css'>
+<!-- <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'> -->
+<!-- <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:600' rel='stylesheet' type='text/css'> -->
 
 <!-- font awesome -->
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -35,25 +35,13 @@
 <link id="scrollUpTheme" rel="stylesheet" href="css/themes/tab.css">
 <link rel="stylesheet" href="css/labs.css">
 
-<script src="../dist/lib/jquery-1.11.1.min.js"></script>
+<script src="assets/jquery.js"></script>
 <script src="../dist/jquery.scrollUp.min.js"></script>
 
 </head>
 
 <body>
-<!-- menu -->
-<menu>
-  <ul>
-    <li><a class="active" href="#"> </a></li>
-    <li><a class="active" href="#">: قیمت کل  </a></li>
-    <li><a class="active" href="#noshidani">انتخاب نوشیدنی</a></li>
-    <li><a class="active" href="#sos">انتخاب سس </a></li>
-    <li><a class="active" href="#salad">انتخاب سالاد</a></li>
-    <li><a class="active" href="#food">انتخاب غذا</a></li>
-    <li style="float:right;"><a href="#">ثبت </a></li>
-  </ul>
-</menu>
-
+<div id="nav"></div>
  <!-- index pg  -->
 <ul class="coming-soon">
   <h2> به رستوران کوکولت خوش آمدید</h2>
@@ -566,18 +554,26 @@
 </script>
 <!-- end plus -->
 
+<!-- <div id="nav"></div> -->
 <script type="text/javascript">
-$(document).ready(function(){
+  /* Loader */
+  $(document).ready(function () {
+      // $.get("header.html", function (data) {
+      //   $("#header").html(data);
+      // });
 
+      // $.get("nav.html", function (data) {
+      //     console.log('data received...', data);
+      //     $("#nav").html(data);
+      // });
 
-
-
-//   $("figure").hover(function(){
-// $(".effect-oscar").css("display","block");
-// $(".effect-oscar").css("display","block");
-  // });
-
-});
+      $.ajax({
+           url: "nav.html", dataType: "html"
+      }).done(function( responseHtml ) {
+           $("#nav").html(responseHtml);
+      });
+  });
 </script>
+
 </body>
 </html>
